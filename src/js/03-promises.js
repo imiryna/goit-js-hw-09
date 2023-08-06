@@ -7,9 +7,9 @@ const refs = {
 
 refs.btn.addEventListener('click', startPromises);
 
-let firstDelay = 0;
-let amount = 0;
 let delay = 0;
+let amount = 0;
+let step = 0;
 
 function startPromises(e) {
   e.preventDefault();
