@@ -18,7 +18,7 @@ function startPromises(e) {
   amount = Number(refs.form.elements.amount.value);
   step = Number(refs.form.elements.step.value);
 
-  for (let i = 1; i <= amount; i++) {
+  for (let i = 1; i <= amount; i += 1) {
     setTimeout(() => {
       createPromise(i, delay)
         .then(({ position, delay }) => {
@@ -27,8 +27,8 @@ function startPromises(e) {
         .catch(({ position, delay }) => {
           Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
         });
+      delay += step;
     }, delay);
-    delay += step;
   }
 }
 
